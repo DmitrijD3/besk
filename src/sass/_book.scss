@@ -1,0 +1,39 @@
+.book{
+  width: 100%;
+  border: 1px solid $color-border;
+  max-width: 400px;
+  margin-left: 2%;
+
+  @media(max-width: $change-layout){
+    margin: 20px 0px;
+  }
+  &__row{
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child{
+      border-bottom: 0px;
+    }
+    &:nth-child(even){
+      background: $color-grey;
+    }
+  }
+  &__header{
+    font-weight: 600;
+    font-size: 20px;
+    background: $color-blue;
+    color: $color-white;
+  }
+  &__cell{
+    width: 33%;
+    padding: 10px 6px;
+  }
+  &__empty{
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: $color-red;
+  }
+}

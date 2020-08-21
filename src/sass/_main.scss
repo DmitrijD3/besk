@@ -1,0 +1,29 @@
+*,*:before,*:after{
+  box-sizing: border-box;
+}
+body{
+  font-family: $font-roboto;
+  padding: 0;
+  margin: 0;
+  background: $color-white;
+}
+p{
+  line-height: 100%;
+  font-size: 16px;
+}
+.container{
+  width: 100%;
+  max-width: 1124px;
+  margin: 0px auto;
+  padding: 20px 12px;
+}
+.tables-holder{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+
+  @media(max-width: $change-layout){
+    flex-direction: column;
+  }
+}
