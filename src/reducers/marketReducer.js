@@ -1,4 +1,4 @@
-import { FETCH_MARKET } from '../actions/types';
+import { FETCH_MARKET } from "../actions/types";
 
 const INITIAL_STATE = {
   markets: []
@@ -10,5 +10,5 @@ export default(state = INITIAL_STATE, action) => {
       return { ...state, markets: action.payload};
     default:
      return state;
-  }
+  };
 };

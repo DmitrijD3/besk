@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import MarketTable from "./MarketTable";
 import BookTable from "./BookTable";
-import '../sass/app.scss';
+import "../sass/app.scss";
 
 const App = () => {
   return(

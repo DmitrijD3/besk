@@ -1,6 +1,6 @@
-import { ACTIVE_MARKET } from '../actions/types';
+import { ACTIVE_MARKET } from "../actions/types";
 
-const INITIAL_STATE = localStorage.getItem('mySelectedCurr') || 'ltc-btc';
+const INITIAL_STATE = localStorage.getItem("mySelectedCurr") || "ltc-btc";
 
 export default (state = INITIAL_STATE, action) => {
   switch(action.type){
@@ -8,5 +8,5 @@ export default (state = INITIAL_STATE, action) => {
       return action.payload;
     default:
       return state;
-  }
+  };
 };

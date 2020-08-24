@@ -2,7 +2,7 @@ import {
   FETCH_BOOK,
   FETCH_MARKET,
   ACTIVE_MARKET
-} from './types';
+} from "./types";
 
 export const selectedMarket = (data) => {
   return (dispatch) => {

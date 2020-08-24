@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 
-import { fetchMarket, selectedMarket } from "../actions"
+import { fetchMarket, selectedMarket } from "../actions";
 
 const MarketTable = () => {
   const markets = useSelector(state => state.market.markets);
@@ -11,22 +11,21 @@ const MarketTable = () => {
 
   useEffect(() => {
     const marketRes = async () => {
-      const response = await axios(`https://exmarkets.com/api/v1/general/information`,);
+      const response = await axios("https://exmarkets.com/api/v1/general/information",);
       dispatch(fetchMarket(response.data.markets));
-    }
+    };
     marketRes();
   }, []);
 
-  const onItemClick = (e) => {
-    const dataSlug = e.currentTarget.attributes['data-slug'].value;
-    dispatch(selectedMarket(dataSlug));
-    localStorage.setItem("mySelectedCurr", dataSlug);
-  }
+  const onItemClick = (slug) => {
+    dispatch(selectedMarket(slug));
+    localStorage.setItem("mySelectedCurr", slug);
+  };
 
   const renderList = () => {
     return markets.map(itm => {
       return(
-        <div className={`market__item ${itm.slug === query && "market__item--active"}`} key={itm.id} data-slug={itm.slug} onClick={(e) => onItemClick(e)}>{itm.name}</div>
+        <div className={`market__item ${itm.slug === query && "market__item--active"}`} key={itm.id} onClick={() => onItemClick(itm.slug)}>{itm.name}</div>
       );
     });
   };
@@ -35,7 +34,7 @@ const MarketTable = () => {
     <div className="market">
       {renderList()}
     </div>
-  )
-}
+  );
+};
 
 export default MarketTable;

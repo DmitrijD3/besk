@@ -1,4 +1,4 @@
-import { FETCH_BOOK } from '../actions/types';
+import { FETCH_BOOK } from "../actions/types";
 
 const INITIAL_STATE = {
   bids: [],
@@ -11,5 +11,5 @@ export default(state = INITIAL_STATE, action) => {
       return { ...state, bids: action.payload.bids,  asks: action.payload.asks};
     default:
      return state;
-  }
+  };
 };
